@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "apirequest.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GroupeMINASTE/APIRequest.swift",
+      "state" : {
+        "revision" : "779527db3a61c430a7f38e8c15779b5a5fd0510f",
+        "version" : "1.3.5"
+      }
+    },
+    {
+      "identity" : "digianalytics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GroupeMINASTE/DigiAnalytics",
+      "state" : {
+        "revision" : "f1d97ffe8ed3392cb6e04d81423aaaa40d06d4e9",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher",
+      "state" : {
+        "revision" : "44e891bdb61426a95e31492a67c7c0dfad1f87c5",
+        "version" : "7.4.1"
+      }
+    },
+    {
+      "identity" : "myapps",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NathanFallet/MyApps",
+      "state" : {
+        "revision" : "eb64798a0b2613130938b2e690d7d1857b8c0c7d",
+        "version" : "1.1.3"
+      }
+    },
+    {
+      "identity" : "sourceful",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/Sourceful",
+      "state" : {
+        "revision" : "77317c0043dc0330e2baf02c43d415bc7cc8a784",
+        "version" : "0.4.0"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  iosApp
+
+  Created by Nathan Fallet on 02/11/2022.
+  Copyright © 2022 orgName. All rights reserved.
+*/
+
+"learn" = "Learn";
+"code" = "Code";
+"settings" = "Settings";
+"about" = "About";
+"documentation" = "Documentation";
+"console" = "Console";
+"developer_text" = "Developed by Nathan Fallet";
+"opensource" = "Open source";
+"button_ok" = "OK";
+"console_load" = "Loading Makth console, please wait…";
+"console_failed" = "Failed to load console";
+"button_cancel" = "Cancel";
+"button_reset" = "Reset";
+"donate_title" = "Donate";
+"donate_header" = "Select an amount to donate:";
+"donate_footer" = "This donation will help our organization to develop its projects, mainly Extopy, the social network we are working on, which will require some storage for its servers.";
+"donate_thanks" = "Thanks for donating to our organization!";
+"editor_settings" = "Editor settings";
+"backgroundColor" = "Background color";
+"plainColor" = "Plain text color";
+"numberColor" = "Numbers color";
+"stringColor" = "Strings color";
+"identifierColor" = "Identifiers color";
+"keywordColor" = "Keywords color";
+"commentColor" = "Comments color";
+"opensource_swiftpackages" = "Swift packages";
+"opensource_others" = "Others";
+"opensource_repo_MakthPlayground" = "The app itself";
+"opensource_repo_DonateViewController" = "A view controller to make donations.";
+"opensource_repo_Sourceful" = "A syntax highlighting source editor for iOS and macOS using UITextView and NSTextView.";
+"opensource_repo_Kingfisher" = "A lightweight, pure-Swift library for downloading and caching images from the web.";
+"opensource_repo_DigiAnalytics" = "Realtime web analytics with privacy and simplicity at its core.";
