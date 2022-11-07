@@ -14,7 +14,8 @@ import shared
 class MakthConsole {
 
     // The environment to execute code
-    private var context = Context(data: [:], logs: [])
+    private var context = Context(data: [:], outputs: [])
+    private var executionBuffer = ""
 
     // Content of the console
     var output = [ConsoleEntry]()
@@ -34,38 +35,66 @@ class MakthConsole {
 
     // Refresh the output
     func refreshOutput() {
-        while lastIndex < context.logs.count {
-            output.append(ConsoleEntry(id: output.count, span: "logs", content: context.logs[lastIndex]))
+        while lastIndex < context.outputs.count {
+            // Handle LaTeX
+            var latex = ""
+            while lastIndex < context.outputs.count && context.outputs[lastIndex] is Value {
+                let content = context.outputs[lastIndex]
+                if content is StringValue && (content as! StringValue).value == "\n" {
+                    break
+                } else {
+                    latex.append((content as! Value).toLaTeXString())
+                }
+                lastIndex += 1
+            }
+            if !latex.isEmpty {
+                output.append(ConsoleEntry(id: output.count, span: "latex", content: latex))
+            }
+            
+            // Handle... (nothing more for now)
+            
+            // Next output
             lastIndex += 1
         }
         
-        delegate?.didFinishLoading()
-        delegate?.didExecute()
+        delegate?.didRefreshOutput()
     }
 
     // Execute code
     func execute(_ source: String) {
         for line in source.split(separator: "\n") {
             output.append(ConsoleEntry(id: output.count, span: "code", content: String(line)))
-        }
-        
-        do {
-            let actions = try AlgorithmLexer(content: source).execute()
-            context = try context.execute(actions: actions)
-        } catch {
-            output.append(ConsoleEntry(id: output.count, span: "stderr", content: error.localizedDescription))
+            executionBuffer += "\(line)\n"
+            
+            if executionBuffer.filter({ $0 == "{" }).count == executionBuffer.filter({ $0 == "}" }).count {
+                privateExecute()
+                refreshOutput()
+            }
         }
         
         refreshOutput()
+        delegate?.didExecute()
+    }
+    
+    private func privateExecute() {
+        do {
+            let actions = try AlgorithmLexer(content: executionBuffer).execute()
+            context = try context.execute(actions: actions)
+            //output.append(ConsoleEntry(id: output.count, span: "context", content: context.description()))
+        } catch {
+            output.append(ConsoleEntry(id: output.count, span: "stderr", content: error.localizedDescription))
+        }
+        executionBuffer = ""
     }
 
     // Reload console
     func reloadConsole() {
         // Just create a new context
-        context = Context(data: [:], logs: [])
+        context = Context(data: [:], outputs: [])
         output = []
         lastIndex = 0
         refreshOutput()
+        delegate?.didFinishLoading()
     }
 
 }

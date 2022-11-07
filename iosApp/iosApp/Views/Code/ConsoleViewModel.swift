@@ -52,7 +52,7 @@ class ConsoleViewModel: NSObject, ObservableObject, MakthConsoleDelegate {
         // Start loading
         showExecuting = true
 
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.main.async {
             // Send to the console
             self.console.execute(source)
         }

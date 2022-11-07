@@ -29,16 +29,7 @@ struct ConsoleView: View {
                                 if let out = viewModel.output {
                                     VStack(alignment: .leading, spacing: 0) {
                                         ForEach(out, id: \.id) { line in
-                                            switch line.span {
-                                            case "code":
-                                                Text("> \(line.content)").foregroundColor(.gray)
-                                            case "context":
-                                                Text(line.content).foregroundColor(.blue)
-                                            case "stderr":
-                                                Text(line.content).foregroundColor(.red)
-                                            default:
-                                                Text(line.content)
-                                            }
+                                            ConsoleEntryView(line: line)
                                         }
                                     }
                                 } else {
@@ -102,6 +93,30 @@ struct ConsoleView: View {
             }
         }
     }
+}
+
+struct ConsoleEntryView: View {
+    
+    @State var dynamicHeight: CGFloat = 0
+    
+    let line: ConsoleEntry
+    
+    var body: some View {
+        switch line.span {
+        case "code":
+            Text("> \(line.content)").foregroundColor(.gray)
+        case "context":
+            Text(line.content).foregroundColor(.blue)
+        case "stderr":
+            Text(line.content).foregroundColor(.red)
+        case "latex":
+            LaTeXView(content: line.content, dynamicHeight: $dynamicHeight)
+                .frame(height: dynamicHeight)
+        default:
+            Text(line.content)
+        }
+    }
+    
 }
 
 struct ConsoleView_Previews: PreviewProvider {

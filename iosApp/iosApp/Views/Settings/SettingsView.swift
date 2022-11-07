@@ -52,17 +52,17 @@ struct SettingsView: View {
                     }
                 Button("documentation") {
                     if let url = URL(string: "https://docs.makth.org") {
-                        DigiAnalytics.shared.send(path: "learn")
+                        DigiAnalytics.shared.send(path: "documentation")
                         openURL(url)
                     }
                 }
                 Button("App Store") {
-                    if let url = URL(string: "https://apps.apple.com/") {
+                    if let url = URL(string: "https://apps.apple.com/app/makth-playground/id6444181671") {
                         openURL(url)
                     }
                 }
                 Button("TestFlight") {
-                    if let url = URL(string: "https://testflight.apple.com/") {
+                    if let url = URL(string: "https://testflight.apple.com/join/jK2K8ngD") {
                         openURL(url)
                     }
                 }

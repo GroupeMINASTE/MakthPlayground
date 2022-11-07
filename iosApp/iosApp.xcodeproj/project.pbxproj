@@ -39,6 +39,7 @@
 		6A51B2642912B8E700395F7E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A51B2632912B8E700395F7E /* StoreKit.framework */; };
 		6A51B2672912BBA300395F7E /* MakthLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A51B2662912BBA300395F7E /* MakthLexer.swift */; };
 		6A51B26A2912C26A00395F7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A51B26C2912C26A00395F7E /* Localizable.strings */; };
+		6ABA5BC229194D9F006387CE /* LaTeXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABA5BC129194D9F006387CE /* LaTeXView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,7 @@
 		6A51B2652912B91A00395F7E /* iosApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosApp.entitlements; sourceTree = "<group>"; };
 		6A51B2662912BBA300395F7E /* MakthLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakthLexer.swift; sourceTree = "<group>"; };
 		6A51B26B2912C26A00395F7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6ABA5BC129194D9F006387CE /* LaTeXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXView.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* Makth Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Makth Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 				6A51B22C2912B29F00395F7E /* ConsoleView.swift */,
 				6A51B22F2912B2E200395F7E /* ConsoleViewModel.swift */,
 				6A51B2312912B2F600395F7E /* SplitView.swift */,
+				6ABA5BC129194D9F006387CE /* LaTeXView.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				6A51B2342912B31700395F7E /* DonateView.swift in Sources */,
 				6A51B25B2912B7F900395F7E /* SKProductExtension.swift in Sources */,
+				6ABA5BC229194D9F006387CE /* LaTeXView.swift in Sources */,
 				6A51B2322912B2F600395F7E /* SplitView.swift in Sources */,
 				6A51B22D2912B29F00395F7E /* ConsoleView.swift in Sources */,
 				6A51B2572912B7C100395F7E /* FontExtension.swift in Sources */,
@@ -489,7 +493,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iosApp/iosApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				ENABLE_PREVIEWS = YES;
@@ -523,7 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iosApp/iosApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				ENABLE_PREVIEWS = YES;
